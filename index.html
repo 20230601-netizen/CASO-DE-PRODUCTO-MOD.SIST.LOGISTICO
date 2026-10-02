@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>SABOR EN UN KIT | Especias del Mundo Monodosis</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            crema: '#FAF7F2',
+            arena: '#F2ECE4',
+            terracota: '#C85A32',
+            terracotaDark: '#A74522',
+            azafran: '#E09F3E',
+            oliva: '#556B2F',
+            olivaLight: '#E8ECE1',
+            carbon: '#26221F',
+            humo: '#706963'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            'artisan': '0 8px 24px -4px rgba(78, 52, 46, 0.08), 0 2px 6px -1px rgba(78, 52, 46, 0.04)',
+            'float': '0 14px 34px -6px rgba(200, 90, 50, 0.18)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Micro-Styles -->
+<style data-purpose="typography">
+    body {
+      background-color: #FAF7F2;
+      color: #26221F;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-serif-title {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .editorial-quote::before {
+      content: "“";
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      line-height: 0;
+      position: absolute;
+      top: 1rem;
+      left: 0.5rem;
+      opacity: 0.25;
+      color: #C85A32;
+    }
+  </style>
+<style data-purpose="scrollbar-and-interactions">
+    /* Ocultar barra de scroll en carruseles manteniendo touch scroll fluido */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .tap-scale {
+      transition: transform 0.15s ease-out, background-color 0.2s ease;
+    }
+    .tap-scale:active {
+      transform: scale(0.97);
+    }
+  </style>
+<!-- END: Custom Micro-Styles -->
+</head>
+<body class="pb-24">
+<!-- BEGIN: TopAnnouncementBar -->
+<aside class="bg-carbon text-crema text-[11px] font-medium tracking-wider text-center py-2 px-3 flex items-center justify-center gap-1.5 border-b border-carbon/10" data-purpose="promo-banner">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-azafran animate-pulse"></span>
+<p>Envío gratis en 3+ kits · Código: <span class="font-bold text-azafran tracking-widest">SABORMUNDO</span></p>
+</aside>
+<!-- END: TopAnnouncementBar -->
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-40 bg-crema/95 backdrop-blur-md border-b border-stone-200/70 px-4 py-3.5 transition-all">
+<div class="flex items-center justify-between">
+<!-- Botón Menú Hamburguesa -->
+<button aria-label="Abrir menú de navegación" class="p-1.5 -ml-1 text-carbon hover:text-terracota tap-scale rounded-lg focus:outline-none" type="button">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Logotipo de la marca -->
+<a class="flex flex-col items-center group" href="#">
+<span class="font-serif font-bold text-lg tracking-widest text-carbon uppercase group-hover:text-terracota transition-colors">
+          Sabor en un Kit
+        </span>
+<span class="text-[8.5px] uppercase tracking-[0.28em] text-humo -mt-1 font-semibold">Especias del Mundo</span>
+</a>
+<!-- Iconos de Búsqueda y Carrito con Badge -->
+<div class="flex items-center gap-1">
+<button aria-label="Buscar productos" class="p-2 text-carbon hover:text-terracota tap-scale" type="button">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<a aria-label="Ver carrito de compras" class="p-2 text-carbon hover:text-terracota tap-scale relative" href="#carrito">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="absolute top-1 right-1 bg-terracota text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</a>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<section class="pt-5 pb-8 px-4 relative overflow-hidden" data-purpose="hero-banner">
+<!-- Insignia Editorial -->
+<div class="flex justify-center mb-3">
+<span class="inline-flex items-center gap-1.5 py-1 px-3.5 rounded-full bg-olivaLight border border-oliva/20 text-oliva text-[11px] font-bold tracking-wide uppercase">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 20 20">
+<path d="M10 2a8 8 0 100 16 8 8 0 000-16zm.75 11.25h-1.5v-1.5h1.5v1.5zm0-3h-1.5V5.75h1.5v4.5z"></path>
+</svg>
+        1 receta · 1 kit · 1 experiencia
+      </span>
+</div>
+<!-- Títulos Principales -->
+<div class="text-center max-w-sm mx-auto mb-5">
+<h1 class="font-serif font-bold text-[31px] leading-[1.12] text-carbon tracking-tight mb-2.5">
+        VIAJA POR EL MUNDO.<br/>
+<span class="italic font-normal text-terracota">Cocina en Casa.</span>
+</h1>
+<p class="text-humo text-[13.5px] leading-relaxed font-normal px-2">
+        Las especias exactas para preparar tus recetas favoritas del mundo, sin llenar tu despensa de botes que usarás una sola vez.
+      </p>
+</div>
+<!-- Llamadas a la acción (CTAs) -->
+<div class="flex flex-col sm:flex-row gap-2.5 max-w-xs mx-auto mb-6">
+<a class="w-full bg-terracota hover:bg-terracotaDark text-white font-bold py-3.5 px-6 rounded-xl text-center text-xs tracking-wider uppercase shadow-float tap-scale transition-colors" href="#favoritos">
+        Explorar Kits
+      </a>
+<a class="w-full bg-arena hover:bg-stone-300 text-carbon font-semibold py-3.5 px-6 rounded-xl text-center text-xs tracking-wider uppercase tap-scale transition-colors" href="#como-funciona">
+        Descubrir Recetas
+      </a>
+</div>
+<!-- Imagen de cabecera con Badge Flotante Artesanal -->
+<div class="relative mx-auto rounded-2xl overflow-hidden shadow-artisan border border-stone-200/60 bg-stone-100">
+<img alt="Banquete de cocina internacional con tacos al pastor, ramen y curry de pollo junto a especias artesanales" class="w-full h-72 object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmGG8iYpCJ5pNOpmyUaQ_bS_5Pmqlnz9d65u2fhkcGvqeltNQSMSrphIDQZ4mWHeUEBQJdpA2YH05uT5TerZdT931w3IkcGa1TRMNCL6FtG2Qq_iWpUNxEmd4Z40qIQpJegF52eKDKI_xiFomS2MuJoSNYBzuOs-hj5pMI4MEOY2bfvAwiKLZcy32quJsOEXgdmJAd4fu9my9C2S5Wvl4qwnfOOAIxQ0cgcsAnzm38tCORNYT4O27SHQ"/>
+<!-- Overlay degradado para profundidad -->
+<div class="absolute inset-0 bg-gradient-to-t from-carbon/40 via-transparent to-transparent pointer-events-none"></div>
+<!-- Tarjeta flotante de garantía -->
+<div class="absolute bottom-3 left-3 right-3 bg-crema/90 backdrop-blur-md p-2.5 rounded-xl border border-white/60 shadow-lg flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-terracota/10 flex items-center justify-center shrink-0 text-terracota">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="leading-tight">
+<p class="text-xs font-bold text-carbon uppercase tracking-wider">100% Especias Puras</p>
+<p class="text-[11px] text-humo font-medium">Molienda en pequeños lotes, sin rellenos ni conservantes.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: HowItWorks -->
+<section class="py-9 px-4 bg-arena/60 border-y border-stone-200" data-purpose="how-it-works" id="como-funciona">
+<div class="text-center mb-6">
+<span class="text-terracota font-bold text-[11px] uppercase tracking-widest block mb-1">Tu experiencia en 3 pasos</span>
+<h2 class="font-serif font-bold text-2xl text-carbon">¿Cómo funciona?</h2>
+<p class="text-humo text-xs max-w-xs mx-auto mt-1">Transforma cualquier cena ordinaria en una aventura culinaria de alta cocina.</p>
+</div>
+<!-- 3 Pasos con numeración artesanal -->
+<div class="space-y-3.5">
+<!-- Paso 1 -->
+<article class="bg-crema p-4 rounded-xl border border-stone-200/80 shadow-sm flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-full bg-terracota text-white flex items-center justify-center font-serif font-bold text-sm shrink-0">
+          01
+        </div>
+<div>
+<h3 class="font-serif font-bold text-sm text-carbon mb-0.5">Elige tu receta internacional</h3>
+<p class="text-[12px] text-humo leading-relaxed">Selecciona el plato que deseas cocinar hoy: México, Japón, India, Tailandia y más.</p>
+</div>
+</article>
+<!-- Paso 2 -->
+<article class="bg-crema p-4 rounded-xl border border-stone-200/80 shadow-sm flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-full bg-azafran text-carbon flex items-center justify-center font-serif font-bold text-sm shrink-0">
+          02
+        </div>
+<div>
+<h3 class="font-serif font-bold text-sm text-carbon mb-0.5">Abre tu sachet monodosis</h3>
+<p class="text-[12px] text-humo leading-relaxed">Gramajes exactos y combinaciones de hierbas frescas selladas en papel kraft ecológico.</p>
+</div>
+</article>
+<!-- Paso 3 -->
+<article class="bg-crema p-4 rounded-xl border border-stone-200/80 shadow-sm flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-full bg-oliva text-white flex items-center justify-center font-serif font-bold text-sm shrink-0">
+          03
+        </div>
+<div>
+<h3 class="font-serif font-bold text-sm text-carbon mb-0.5">Cocina guiado por chefs (QR)</h3>
+<p class="text-[12px] text-humo leading-relaxed">Escanea la tarjeta para seguir el paso a paso detallado y la lista de frescos necesarios.</p>
+</div>
+</article>
+</div>
+</section>
+<!-- END: HowItWorks -->
+<!-- BEGIN: ExploreRegions -->
+<section class="py-8 pl-4" data-purpose="region-carousel">
+<div class="pr-4 flex items-end justify-between mb-4">
+<div>
+<span class="text-terracota font-bold text-[10px] uppercase tracking-widest block mb-0.5">Pasaporte Culinario</span>
+<h2 class="font-serif font-bold text-xl text-carbon">Explora por Región</h2>
+</div>
+<a class="text-xs text-terracota font-bold underline underline-offset-4" href="#">Ver mapa</a>
+</div>
+<!-- Carrusel Horizontal Táctil -->
+<div class="flex gap-3 overflow-x-auto hide-scrollbar pr-4 py-1">
+<!-- Item México -->
+<div class="shrink-0 flex flex-col items-center gap-1.5 w-20 tap-scale">
+<div class="w-16 h-16 rounded-full bg-terracota/10 border-2 border-terracota flex items-center justify-center text-2xl shadow-sm">
+          🌮
+        </div>
+<span class="text-xs font-semibold text-carbon">México</span>
+</div>
+<!-- Item Japón -->
+<div class="shrink-0 flex flex-col items-center gap-1.5 w-20 tap-scale">
+<div class="w-16 h-16 rounded-full bg-stone-100 border border-stone-300 flex items-center justify-center text-2xl">
+          🍜
+        </div>
+<span class="text-xs font-semibold text-carbon">Japón</span>
+</div>
+<!-- Item India -->
+<div class="shrink-0 flex flex-col items-center gap-1.5 w-20 tap-scale">
+<div class="w-16 h-16 rounded-full bg-stone-100 border border-stone-300 flex items-center justify-center text-2xl">
+          🍛
+        </div>
+<span class="text-xs font-semibold text-carbon">India</span>
+</div>
+<!-- Item Perú -->
+<div class="shrink-0 flex flex-col items-center gap-1.5 w-20 tap-scale">
+<div class="w-16 h-16 rounded-full bg-stone-100 border border-stone-300 flex items-center justify-center text-2xl">
+          🍢
+        </div>
+<span class="text-xs font-semibold text-carbon">Perú</span>
+</div>
+<!-- Item Tailandia -->
+<div class="shrink-0 flex flex-col items-center gap-1.5 w-20 tap-scale">
+<div class="w-16 h-16 rounded-full bg-stone-100 border border-stone-300 flex items-center justify-center text-2xl">
+          🍲
+        </div>
+<span class="text-xs font-semibold text-carbon">Tailandia</span>
+</div>
+<!-- Item Italia -->
+<div class="shrink-0 flex flex-col items-center gap-1.5 w-20 tap-scale">
+<div class="w-16 h-16 rounded-full bg-stone-100 border border-stone-300 flex items-center justify-center text-2xl">
+          🍝
+        </div>
+<span class="text-xs font-semibold text-carbon">Italia</span>
+</div>
+<!-- Item Marruecos -->
+<div class="shrink-0 flex flex-col items-center gap-1.5 w-20 tap-scale">
+<div class="w-16 h-16 rounded-full bg-stone-100 border border-stone-300 flex items-center justify-center text-2xl">
+          🥘
+        </div>
+<span class="text-xs font-semibold text-carbon">Marruecos</span>
+</div>
+</div>
+</section>
+<!-- END: ExploreRegions -->
+<!-- BEGIN: FeaturedProductsGrid -->
+<section class="py-8 px-4 bg-crema" data-purpose="product-grid" id="favoritos">
+<div class="flex items-end justify-between mb-5">
+<div>
+<span class="text-terracota font-bold text-[10.5px] uppercase tracking-widest block mb-0.5">Los más pedidos</span>
+<h2 class="font-serif font-bold text-2xl text-carbon">Kits Favoritos</h2>
+</div>
+<span class="text-xs text-humo">4 porciones/kit</span>
+</div>
+<!-- Cuadrícula 2 Columnas para Móvil -->
+<div class="grid grid-cols-2 gap-3.5">
+<!-- Producto 1: Tacos al Pastor -->
+<article class="bg-white rounded-xl overflow-hidden border border-stone-200/90 shadow-sm flex flex-col">
+<div class="relative bg-stone-100 pt-[100%] overflow-hidden">
+<img alt="Kit Especias Tacos al Pastor" class="absolute inset-0 w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmGG8iYpCJ5pNOpmyUaQ_bS_5Pmqlnz9d65u2fhkcGvqeltNQSMSrphIDQZ4mWHeUEBQJdpA2YH05uT5TerZdT931w3IkcGa1TRMNCL6FtG2Qq_iWpUNxEmd4Z40qIQpJegF52eKDKI_xiFomS2MuJoSNYBzuOs-hj5pMI4MEOY2bfvAwiKLZcy32quJsOEXgdmJAd4fu9my9C2S5Wvl4qwnfOOAIxQ0cgcsAnzm38tCORNYT4O27SHQ"/>
+<span class="absolute top-2 left-2 bg-terracota text-white text-[9.5px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Top Ventas</span>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<div class="flex items-center justify-between text-[10px] text-humo mb-1">
+<span class="font-bold text-terracota uppercase tracking-wide">México</span>
+<span class="flex items-center text-amber-500 font-semibold">★ 4.9</span>
+</div>
+<h3 class="font-serif font-bold text-[13.5px] leading-snug text-carbon mb-1">Kit Tacos al Pastor</h3>
+<p class="text-[11px] text-humo mb-3">Achiote yucateco, chile guajillo, comino tostado y orégano.</p>
+<div class="mt-auto pt-2 border-t border-stone-100 flex items-center justify-between">
+<span class="font-serif font-bold text-carbon text-sm">$4.90</span>
+<button aria-label="Añadir Kit Tacos al Pastor al carrito" class="bg-stone-100 hover:bg-terracota hover:text-white text-carbon text-[11px] font-bold px-2.5 py-1.5 rounded-lg border border-stone-300/80 tap-scale transition-colors" type="button">
+              + Agregar
+            </button>
+</div>
+</div>
+</article>
+<!-- Producto 2: Curry Indio Tikka Masala -->
+<article class="bg-white rounded-xl overflow-hidden border border-stone-200/90 shadow-sm flex flex-col">
+<div class="relative bg-stone-100 pt-[100%] overflow-hidden">
+<img alt="Kit Tikka Masala Curry de la India" class="absolute inset-0 w-full h-full object-cover object-bottom hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmGG8iYpCJ5pNOpmyUaQ_bS_5Pmqlnz9d65u2fhkcGvqeltNQSMSrphIDQZ4mWHeUEBQJdpA2YH05uT5TerZdT931w3IkcGa1TRMNCL6FtG2Qq_iWpUNxEmd4Z40qIQpJegF52eKDKI_xiFomS2MuJoSNYBzuOs-hj5pMI4MEOY2bfvAwiKLZcy32quJsOEXgdmJAd4fu9my9C2S5Wvl4qwnfOOAIxQ0cgcsAnzm38tCORNYT4O27SHQ"/>
+<span class="absolute top-2 left-2 bg-azafran text-carbon text-[9.5px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Aromático</span>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<div class="flex items-center justify-between text-[10px] text-humo mb-1">
+<span class="font-bold text-azafran uppercase tracking-wide">India</span>
+<span class="flex items-center text-amber-500 font-semibold">★ 5.0</span>
+</div>
+<h3 class="font-serif font-bold text-[13.5px] leading-snug text-carbon mb-1">Kit Tikka Masala</h3>
+<p class="text-[11px] text-humo mb-3">Garam masala casero, cúrcuma de Madrás, cardamomo y fenogreco.</p>
+<div class="mt-auto pt-2 border-t border-stone-100 flex items-center justify-between">
+<span class="font-serif font-bold text-carbon text-sm">$5.20</span>
+<button aria-label="Añadir Kit Tikka Masala al carrito" class="bg-stone-100 hover:bg-terracota hover:text-white text-carbon text-[11px] font-bold px-2.5 py-1.5 rounded-lg border border-stone-300/80 tap-scale transition-colors" type="button">
+              + Agregar
+            </button>
+</div>
+</div>
+</article>
+<!-- Producto 3: Ramen Shoyu Tokio -->
+<article class="bg-white rounded-xl overflow-hidden border border-stone-200/90 shadow-sm flex flex-col">
+<div class="relative bg-stone-100 pt-[100%] overflow-hidden">
+<img alt="Kit Caldo Ramen de Japón" class="absolute inset-0 w-full h-full object-cover object-right hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmGG8iYpCJ5pNOpmyUaQ_bS_5Pmqlnz9d65u2fhkcGvqeltNQSMSrphIDQZ4mWHeUEBQJdpA2YH05uT5TerZdT931w3IkcGa1TRMNCL6FtG2Qq_iWpUNxEmd4Z40qIQpJegF52eKDKI_xiFomS2MuJoSNYBzuOs-hj5pMI4MEOY2bfvAwiKLZcy32quJsOEXgdmJAd4fu9my9C2S5Wvl4qwnfOOAIxQ0cgcsAnzm38tCORNYT4O27SHQ"/>
+<span class="absolute top-2 left-2 bg-carbon text-white text-[9.5px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Favorito</span>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<div class="flex items-center justify-between text-[10px] text-humo mb-1">
+<span class="font-bold text-carbon uppercase tracking-wide">Japón</span>
+<span class="flex items-center text-amber-500 font-semibold">★ 4.9</span>
+</div>
+<h3 class="font-serif font-bold text-[13.5px] leading-snug text-carbon mb-1">Kit Ramen Shoyu</h3>
+<p class="text-[11px] text-humo mb-3">Shichimi togarashi, alga dashi, jengibre en polvo y sésamo negro.</p>
+<div class="mt-auto pt-2 border-t border-stone-100 flex items-center justify-between">
+<span class="font-serif font-bold text-carbon text-sm">$5.50</span>
+<button aria-label="Añadir Kit Ramen Shoyu al carrito" class="bg-stone-100 hover:bg-terracota hover:text-white text-carbon text-[11px] font-bold px-2.5 py-1.5 rounded-lg border border-stone-300/80 tap-scale transition-colors" type="button">
+              + Agregar
+            </button>
+</div>
+</div>
+</article>
+<!-- Producto 4: Anticuchos Limeños -->
+<article class="bg-white rounded-xl overflow-hidden border border-stone-200/90 shadow-sm flex flex-col">
+<div class="relative bg-stone-100 pt-[100%] overflow-hidden">
+<img alt="Kit Anticuchos Peruanos" class="absolute inset-0 w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5Ahiq05zIZ7AhHYhXVnxfPolHpnHW5Ln8c7QFqU0e_arEiOj7gm7-oGDcuf0eOSM2AFIXnBjhD3eghMaNpHIfvoGdEGsiO7ErTowmRp3GsnwPZFTaUnBL68FRxRuRlGRQGWbAR70TSV7jbDpe7cTVQhPrMCDNAac3CPGImTbnjaWtUYcOMef0U_c1eKiaK0wAJ0y4lMNmRKuNfXWXM3BeHdA2Vl4bPrWGmuECbCQf9wxYGoRuaaOlKA"/>
+<span class="absolute top-2 left-2 bg-oliva text-white text-[9.5px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Tradición</span>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<div class="flex items-center justify-between text-[10px] text-humo mb-1">
+<span class="font-bold text-oliva uppercase tracking-wide">Perú</span>
+<span class="flex items-center text-amber-500 font-semibold">★ 4.8</span>
+</div>
+<h3 class="font-serif font-bold text-[13.5px] leading-snug text-carbon mb-1">Kit Anticuchos Andinos</h3>
+<p class="text-[11px] text-humo mb-3">Ají panca deshidratado en origen, comino de sierra y ajo tostado.</p>
+<div class="mt-auto pt-2 border-t border-stone-100 flex items-center justify-between">
+<span class="font-serif font-bold text-carbon text-sm">$4.90</span>
+<button aria-label="Añadir Kit Anticuchos al carrito" class="bg-stone-100 hover:bg-terracota hover:text-white text-carbon text-[11px] font-bold px-2.5 py-1.5 rounded-lg border border-stone-300/80 tap-scale transition-colors" type="button">
+              + Agregar
+            </button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- END: FeaturedProductsGrid -->
+<!-- BEGIN: HighlightedHeroBox -->
+<section class="py-8 px-4 bg-arena" data-purpose="highlighted-box">
+<div class="border-2 border-terracota/30 rounded-2xl p-4 bg-crema shadow-artisan relative overflow-hidden">
+<!-- Badge de descuento -->
+<div class="inline-block bg-terracota text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3">
+        Tu Primer Viaje Gastronómico · Ahorra 18%
+      </div>
+<h2 class="font-serif font-bold text-2xl text-carbon leading-tight mb-2">
+        Caja Descubre el Mundo
+      </h2>
+<p class="text-humo text-xs leading-relaxed mb-4">
+        Nuestra emblemática caja artesanal de cartón reciclado con los 6 destinos culinarios más aclamados, 6 tarjetas de recetas coleccionables y una cuchara medidora de madera de olivo.
+      </p>
+<!-- Imagen del Producto Destacado Abierto -->
+<div class="relative rounded-xl overflow-hidden shadow-md mb-4 border border-stone-200">
+<img alt="Caja Descubre el Mundo abierta mostrando los 6 kits de especias y fichas de recetas" class="w-full h-64 object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5Ahiq05zIZ7AhHYhXVnxfPolHpnHW5Ln8c7QFqU0e_arEiOj7gm7-oGDcuf0eOSM2AFIXnBjhD3eghMaNpHIfvoGdEGsiO7ErTowmRp3GsnwPZFTaUnBL68FRxRuRlGRQGWbAR70TSV7jbDpe7cTVQhPrMCDNAac3CPGImTbnjaWtUYcOMef0U_c1eKiaK0wAJ0y4lMNmRKuNfXWXM3BeHdA2Vl4bPrWGmuECbCQf9wxYGoRuaaOlKA"/>
+<span class="absolute bottom-2 right-2 bg-carbon/80 text-white backdrop-blur text-[10px] px-2 py-0.5 rounded">
+          Incluye 6 Kits Monodosis
+        </span>
+</div>
+<!-- Lista de Beneficios del Box -->
+<ul class="space-y-2 text-xs text-carbon mb-5">
+<li class="flex items-center gap-2">
+<svg class="w-4 h-4 text-oliva shrink-0" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+<span><strong>6 Recetas completas:</strong> Tacos, Curry, Ramen, Tajine, Anticuchos y Pad Thai.</span>
+</li>
+<li class="flex items-center gap-2">
+<svg class="w-4 h-4 text-oliva shrink-0" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+<span><strong>Cuchara artesanal de madera</strong> para servir y dosificar.</span>
+</li>
+<li class="flex items-center gap-2">
+<svg class="w-4 h-4 text-oliva shrink-0" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+<span><strong>Fichas ilustradas</strong> con historia cultural y maridajes sugeridos.</span>
+</li>
+</ul>
+<!-- Precio y CTA de compra directa -->
+<div class="flex items-center justify-between pt-3 border-t border-stone-200">
+<div>
+<span class="text-xs text-humo line-through block -mb-0.5">$34.00</span>
+<span class="font-serif font-bold text-2xl text-terracota">$27.90</span>
+</div>
+<button class="bg-terracota hover:bg-terracotaDark text-white font-bold text-xs uppercase tracking-wider py-3 px-5 rounded-xl shadow-float tap-scale transition-colors" type="button">
+          Quiero Descubrir el Mundo
+        </button>
+</div>
+</div>
+</section>
+<!-- END: HighlightedHeroBox -->
+<!-- BEGIN: ValueProposition -->
+<section class="py-9 px-4 bg-crema" data-purpose="value-pillars">
+<div class="text-center mb-6">
+<span class="text-terracota font-bold text-[10px] uppercase tracking-widest block mb-1">El Manifiesto</span>
+<h2 class="font-serif font-bold text-2xl text-carbon">Menos despensa. Más sabor.</h2>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Pilar 1 -->
+<div class="p-3.5 bg-arena/50 rounded-xl border border-stone-200">
+<div class="w-8 h-8 rounded-lg bg-terracota/10 text-terracota flex items-center justify-center mb-2.5 font-bold">
+          🌿
+        </div>
+<h3 class="font-serif font-bold text-sm text-carbon mb-1">Cero Desperdicio</h3>
+<p class="text-[11px] text-humo leading-relaxed">No más frascos de especias olvidados que caducan tras usarse una sola vez.</p>
+</div>
+<!-- Pilar 2 -->
+<div class="p-3.5 bg-arena/50 rounded-xl border border-stone-200">
+<div class="w-8 h-8 rounded-lg bg-azafran/20 text-carbon flex items-center justify-center mb-2.5 font-bold">
+          ⚖️
+        </div>
+<h3 class="font-serif font-bold text-sm text-carbon mb-1">Cero Medición</h3>
+<p class="text-[11px] text-humo leading-relaxed">Las proporciones maestras equilibradas por expertos. Abre, vierte y cocina.</p>
+</div>
+<!-- Pilar 3 -->
+<div class="p-3.5 bg-arena/50 rounded-xl border border-stone-200">
+<div class="w-8 h-8 rounded-lg bg-oliva/15 text-oliva flex items-center justify-center mb-2.5 font-bold">
+          ✈️
+        </div>
+<h3 class="font-serif font-bold text-sm text-carbon mb-1">Autenticidad Real</h3>
+<p class="text-[11px] text-humo leading-relaxed">Ingredientes originarios traídos directamente de cooperativas agrícolas locales.</p>
+</div>
+<!-- Pilar 4 -->
+<div class="p-3.5 bg-arena/50 rounded-xl border border-stone-200">
+<div class="w-8 h-8 rounded-lg bg-stone-300/50 text-carbon flex items-center justify-center mb-2.5 font-bold">
+          ♻️
+        </div>
+<h3 class="font-serif font-bold text-sm text-carbon mb-1">Empaque Limpio</h3>
+<p class="text-[11px] text-humo leading-relaxed">Papel kraft biodegradable sin plásticos superfluos ni tintas contaminantes.</p>
+</div>
+</div>
+</section>
+<!-- END: ValueProposition -->
+<!-- BEGIN: InteractiveSpiceMapQuote -->
+<section class="py-9 px-4 bg-carbon text-crema relative overflow-hidden" data-purpose="interactive-map-concept">
+<div class="absolute -right-10 -bottom-10 opacity-5 w-60 h-60 rounded-full border-[20px] border-crema pointer-events-none"></div>
+<div class="relative z-10 text-center mb-6">
+<span class="text-azafran font-bold text-[10px] uppercase tracking-widest block mb-1">Rutas Comerciales del Sabor</span>
+<h2 class="font-serif font-bold text-2xl text-crema">Cocina el Mundo desde tu Fogón</h2>
+</div>
+<!-- Mapa esquemático estilizado -->
+<div class="bg-carbon/80 border border-stone-700 rounded-2xl p-4 mb-5 text-center relative">
+<p class="text-[11px] uppercase tracking-widest text-humo font-mono mb-3">Orígenes Activos en este lote</p>
+<!-- Pines de Regiones -->
+<div class="flex flex-wrap justify-center gap-2">
+<span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-stone-800 text-stone-200 text-xs border border-stone-700">
+<span class="w-2 h-2 rounded-full bg-terracota"></span> Oaxaca, México
+        </span>
+<span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-stone-800 text-stone-200 text-xs border border-stone-700">
+<span class="w-2 h-2 rounded-full bg-azafran"></span> Kerala, India
+        </span>
+<span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-stone-800 text-stone-200 text-xs border border-stone-700">
+<span class="w-2 h-2 rounded-full bg-oliva"></span> Kioto, Japón
+        </span>
+<span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-stone-800 text-stone-200 text-xs border border-stone-700">
+<span class="w-2 h-2 rounded-full bg-orange-400"></span> Marrakech, Marruecos
+        </span>
+</div>
+<!-- Cita inspiradora -->
+<div class="mt-6 pt-4 border-t border-stone-800 relative editorial-quote px-3 text-left">
+<p class="font-serif italic text-sm text-stone-300 leading-relaxed pl-4">
+          Una cucharadita de comino tostado y chile chipotle es capaz de teletransportarte más lejos que cualquier billete de avión.
+        </p>
+<span class="block text-right text-[10px] text-azafran uppercase tracking-widest mt-2">— Cuaderno de bitácora del Chef</span>
+</div>
+</div>
+</section>
+<!-- END: InteractiveSpiceMapQuote -->
+<!-- BEGIN: MonthlySubscriptionClub -->
+<section class="py-8 px-4 bg-olivaLight/60" data-purpose="subscription-club">
+<div class="bg-crema border border-oliva/30 rounded-2xl p-5 shadow-sm">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2.5 h-2.5 rounded-full bg-oliva"></span>
+<span class="text-[11px] font-bold text-oliva uppercase tracking-widest">Suscripción Gastronómica</span>
+</div>
+<h2 class="font-serif font-bold text-2xl text-carbon mb-2">El Club de los Sabores</h2>
+<p class="text-humo text-xs leading-relaxed mb-4">
+        Recibe cada mes una caja con <strong>4 recetas inéditas del mundo</strong>, ingredientes secretos que no vendemos en la tienda y acceso a clases de cocina en directo.
+      </p>
+<div class="bg-arena/70 rounded-xl p-3 mb-4 flex items-baseline justify-between">
+<div>
+<span class="text-2xl font-serif font-bold text-carbon">$18.50</span>
+<span class="text-xs text-humo">/ mes</span>
+</div>
+<span class="text-[11px] font-semibold text-oliva">Cancela cuando quieras</span>
+</div>
+<button class="w-full bg-oliva hover:bg-stone-800 text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl tap-scale transition-colors shadow-sm" type="button">
+        Unirme al Club Mensual
+      </button>
+</div>
+</section>
+<!-- END: MonthlySubscriptionClub -->
+<!-- BEGIN: BundleKits -->
+<section class="py-8 px-4 bg-crema" data-purpose="value-bundles">
+<div class="text-center mb-6">
+<span class="text-terracota font-bold text-[10.5px] uppercase tracking-widest block mb-1">Ahorro inteligente</span>
+<h2 class="font-serif font-bold text-2xl text-carbon">Packs Temáticos</h2>
+</div>
+<div class="space-y-3">
+<!-- Pack 1 -->
+<div class="flex items-center justify-between p-3.5 bg-white border border-stone-200 rounded-xl shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-terracota/10 flex items-center justify-center text-xl shrink-0">
+            🌶️
+          </div>
+<div>
+<h3 class="font-serif font-bold text-sm text-carbon">Pack Noche Mexicana</h3>
+<p class="text-[11px] text-humo">Tacos Pastor + Tinga + Carnitas (3 Kits)</p>
+</div>
+</div>
+<div class="text-right shrink-0 pl-2">
+<span class="font-serif font-bold text-sm text-carbon block">$12.90</span>
+<span class="text-[10px] text-terracota font-bold uppercase">-15%</span>
+</div>
+</div>
+<!-- Pack 2 -->
+<div class="flex items-center justify-between p-3.5 bg-white border border-stone-200 rounded-xl shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-azafran/15 flex items-center justify-center text-xl shrink-0">
+            🥢
+          </div>
+<div>
+<h3 class="font-serif font-bold text-sm text-carbon">Pack Viaje por Asia</h3>
+<p class="text-[11px] text-humo">Ramen + Butter Chicken + Pad Thai</p>
+</div>
+</div>
+<div class="text-right shrink-0 pl-2">
+<span class="font-serif font-bold text-sm text-carbon block">$13.50</span>
+<span class="text-[10px] text-terracota font-bold uppercase">-15%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: BundleKits -->
+<!-- BEGIN: RealReviews -->
+<section class="py-8 px-4 bg-arena/40 border-t border-stone-200" data-purpose="customer-reviews">
+<div class="text-center mb-5">
+<div class="flex justify-center text-amber-500 gap-1 text-sm mb-1">
+        ★★★★★
+      </div>
+<h2 class="font-serif font-bold text-xl text-carbon">+1,800 Viajeros de Cocina</h2>
+<p class="text-xs text-humo">Puntuación media de 4.9/5 en toda la colección</p>
+</div>
+<!-- Carrusel de Reseñas -->
+<div class="flex gap-3 overflow-x-auto hide-scrollbar pb-2">
+<!-- Testimonio 1 -->
+<div class="min-w-[260px] bg-crema p-4 rounded-xl border border-stone-200 shadow-sm shrink-0">
+<div class="text-amber-500 text-xs mb-1.5">★★★★★</div>
+<p class="text-xs text-carbon italic mb-3 leading-relaxed">
+          "El Ramen Shoyu sabe idéntico al que comí en Shinjuku. No tener que comprar tarros enteros de 5 especias diferentes es una maravilla."
+        </p>
+<span class="text-[11px] font-bold text-carbon block">Elena M. · Madrid</span>
+<span class="text-[10px] text-humo">Compró Kit Ramen Tokio</span>
+</div>
+<!-- Testimonio 2 -->
+<div class="min-w-[260px] bg-crema p-4 rounded-xl border border-stone-200 shadow-sm shrink-0">
+<div class="text-amber-500 text-xs mb-1.5">★★★★★</div>
+<p class="text-xs text-carbon italic mb-3 leading-relaxed">
+          "La Caja Descubre el Mundo fue el regalo perfecto de cumpleaños. Los tacos al pastor salieron espectaculares y la receta es facilísima."
+        </p>
+<span class="text-[11px] font-bold text-carbon block">Carlos R. · Barcelona</span>
+<span class="text-[10px] text-humo">Compró Caja Descubre el Mundo</span>
+</div>
+</div>
+</section>
+<!-- END: RealReviews -->
+<!-- BEGIN: InstagramMosaic -->
+<section class="py-8 px-4 bg-crema" data-purpose="social-proof">
+<div class="text-center mb-4">
+<span class="text-terracota font-bold text-[10px] uppercase tracking-widest block mb-1">Comunidad</span>
+<h2 class="font-serif font-bold text-xl text-carbon">#SaborEnUnKit</h2>
+<p class="text-xs text-humo">Etiquétanos en Instagram para ganar un kit mensual gratis</p>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="aspect-square rounded-lg overflow-hidden bg-stone-200">
+<img alt="Plato cocinado por cliente" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmGG8iYpCJ5pNOpmyUaQ_bS_5Pmqlnz9d65u2fhkcGvqeltNQSMSrphIDQZ4mWHeUEBQJdpA2YH05uT5TerZdT931w3IkcGa1TRMNCL6FtG2Qq_iWpUNxEmd4Z40qIQpJegF52eKDKI_xiFomS2MuJoSNYBzuOs-hj5pMI4MEOY2bfvAwiKLZcy32quJsOEXgdmJAd4fu9my9C2S5Wvl4qwnfOOAIxQ0cgcsAnzm38tCORNYT4O27SHQ"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-stone-200">
+<img alt="Caja recibida por un cliente" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5Ahiq05zIZ7AhHYhXVnxfPolHpnHW5Ln8c7QFqU0e_arEiOj7gm7-oGDcuf0eOSM2AFIXnBjhD3eghMaNpHIfvoGdEGsiO7ErTowmRp3GsnwPZFTaUnBL68FRxRuRlGRQGWbAR70TSV7jbDpe7cTVQhPrMCDNAac3CPGImTbnjaWtUYcOMef0U_c1eKiaK0wAJ0y4lMNmRKuNfXWXM3BeHdA2Vl4bPrWGmuECbCQf9wxYGoRuaaOlKA"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-stone-200">
+<img alt="Preparación de ramen en casa" class="w-full h-full object-cover object-left" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmGG8iYpCJ5pNOpmyUaQ_bS_5Pmqlnz9d65u2fhkcGvqeltNQSMSrphIDQZ4mWHeUEBQJdpA2YH05uT5TerZdT931w3IkcGa1TRMNCL6FtG2Qq_iWpUNxEmd4Z40qIQpJegF52eKDKI_xiFomS2MuJoSNYBzuOs-hj5pMI4MEOY2bfvAwiKLZcy32quJsOEXgdmJAd4fu9my9C2S5Wvl4qwnfOOAIxQ0cgcsAnzm38tCORNYT4O27SHQ"/>
+</div>
+</div>
+</section>
+<!-- END: InstagramMosaic -->
+<!-- BEGIN: NewsletterSection -->
+<section class="py-9 px-4 bg-carbon text-crema text-center" data-purpose="newsletter">
+<div class="max-w-sm mx-auto">
+<span class="w-8 h-8 rounded-full bg-azafran/20 text-azafran inline-flex items-center justify-center text-sm mb-2">✉️</span>
+<h2 class="font-serif font-bold text-2xl mb-1.5">Únete al Pasaporte Culinario</h2>
+<p class="text-xs text-stone-300 leading-relaxed mb-4">
+        Recibe un <strong>10% de descuento</strong> en tu primera orden y una guía digital de maridajes de especias gratis.
+      </p>
+<form class="flex flex-col gap-2" onsubmit="event.preventDefault();">
+<input class="w-full bg-stone-800 border border-stone-700 rounded-xl px-4 py-3 text-xs text-white placeholder-stone-400 focus:outline-none focus:border-azafran" placeholder="Escribe tu correo electrónico" required="" type="email"/>
+<button class="w-full bg-azafran hover:bg-amber-600 text-carbon font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl tap-scale transition-colors" type="submit">
+          Obtener mi 10% de Bienvenida
+        </button>
+</form>
+</div>
+</section>
+<!-- END: NewsletterSection -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-crema border-t border-stone-300/80 pt-8 pb-14 px-4 text-xs text-humo">
+<div class="flex flex-col items-center text-center mb-6">
+<span class="font-serif font-bold text-base tracking-widest text-carbon uppercase mb-1">
+        Sabor en un Kit
+      </span>
+<p class="text-[11px] max-w-xs text-humo leading-relaxed mb-3">
+        Dedicados a preservar la riqueza culinaria global a través de especias puras en formatos sostenibles.
+      </p>
+<!-- Redes Sociales -->
+<div class="flex gap-4 text-carbon font-semibold text-xs">
+<a class="hover:text-terracota" href="#">Instagram</a>
+<a class="hover:text-terracota" href="#">TikTok</a>
+<a class="hover:text-terracota" href="#">Pinterest</a>
+</div>
+</div>
+<!-- Enlaces Rápidos -->
+<div class="grid grid-cols-2 gap-4 py-4 border-y border-stone-200 mb-6 text-[11.5px]">
+<div class="space-y-2">
+<span class="font-bold text-carbon block uppercase tracking-wider text-[10px]">Explora</span>
+<a class="block hover:text-carbon" href="#">Todos los Kits</a>
+<a class="block hover:text-carbon" href="#">Cajas Regalo</a>
+<a class="block hover:text-carbon" href="#">Club de Suscripción</a>
+<a class="block hover:text-carbon" href="#">Recetas en Video</a>
+</div>
+<div class="space-y-2">
+<span class="font-bold text-carbon block uppercase tracking-wider text-[10px]">Ayuda</span>
+<a class="block hover:text-carbon" href="#">Envíos y Entregas</a>
+<a class="block hover:text-carbon" href="#">Preguntas Frecuentes</a>
+<a class="block hover:text-carbon" href="#">Guía de Alérgenos</a>
+<a class="block hover:text-carbon" href="#">Contacto</a>
+</div>
+</div>
+<!-- Certificados y Seguridad -->
+<div class="flex items-center justify-center gap-4 text-stone-400 text-base mb-4">
+<span title="Pago Seguro SSL">🔒 SSL 256-bit</span>
+<span>•</span>
+<span title="Empaque 100% Reciclable">🌱 Eco-Kraft</span>
+<span>•</span>
+<span title="Sin Conservantes">✨ Puro</span>
+</div>
+<p class="text-center text-[10px] text-stone-400">
+      © 2025 SABOR EN UN KIT S.L. Todos los derechos reservados.
+    </p>
+</footer>
+<!-- END: MainFooter -->
+<!-- BEGIN: BottomMobileNavigationBar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-crema/95 backdrop-blur-md border-t border-stone-200 px-4 py-2 flex items-center justify-around shadow-lg" data-purpose="sticky-bottom-nav">
+<!-- Inicio -->
+<a class="flex flex-col items-center gap-0.5 text-terracota font-bold text-[10px]" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" viewbox="0 0 24 24">
+<path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Inicio</span>
+</a>
+<!-- Kits -->
+<a class="flex flex-col items-center gap-0.5 text-humo hover:text-carbon text-[10px]" href="#favoritos">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.614A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72m-13.5 0c.315.16.657.25 1.012.25.355 0 .697-.09 1.012-.25m0 0a3.001 3.001 0 0 0 3.75-.614" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Kits</span>
+</a>
+<!-- Recetas -->
+<a class="flex flex-col items-center gap-0.5 text-humo hover:text-carbon text-[10px]" href="#como-funciona">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Recetas</span>
+</a>
+<!-- Carrito Fijo -->
+<a class="flex flex-col items-center gap-0.5 text-humo hover:text-carbon text-[10px] relative" href="#carrito">
+<div class="relative">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="absolute -top-1 -right-2 bg-terracota text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">2</span>
+</div>
+<span>Cesta</span>
+</a>
+</nav>
+<!-- END: BottomMobileNavigationBar -->
+</body></html>
